@@ -1,0 +1,35 @@
+name: Deploy React to EC2 for Multiple Domains
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy App
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: SSH and Deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.EC2_IP }}
+          username: ubuntu
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            cd ~/sagar-testing
+            git pull origin main
+            npm install -f
+
+            # ===== DOMAIN1.COM =====
+            cp ~/envs/apple.inditech.shop.env .env
+            npm run build
+            rm -rf ~/builds/apple.inditech.shop
+            mv build ~/builds/apple.inditech.shop
+
+            # ===== DOMAIN2.COM =====
+            # cp ~/envs/domain2.env .env
+            # npm run build
+            # rm -rf ~/builds/domain2
+            # mv build ~/builds/domain2
