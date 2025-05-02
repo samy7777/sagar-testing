@@ -36,14 +36,14 @@ import {
 import { Button } from "@/components/ui/button";
 import { Eye, MoreHorizontal } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import useHasPermission from "@/components/PermissionWrapper";
+// import useHasPermission from "@/components/PermissionWrapper";
 import usePermissionRoute from "@/components/permissionRoute";
 import Loader from "@/components/loader/loader";
 
 function User() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const hasPermission = useHasPermission();
+  // const hasPermission = useHasPermission();
 
   const { getUser, getUserLoading } = useSelector((state) => state.UserSection);
 
@@ -149,23 +149,23 @@ function User() {
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
               {/* <DropdownMenuLabel>Actions</DropdownMenuLabel> */}
-              {hasPermission("USER_EDIT") && (
+{/*               {hasPermission("USER_EDIT") && (
                 <DropdownMenuItem
                   onClick={() => navigate(`${user.id}/add?edit=true`)}
                 >
                   ✏️ Edit
                 </DropdownMenuItem>
-              )}
-              {hasPermission("USER_BLOCK") && (
-                <DropdownMenuItem onClick={() => setBlockTarget(user)}>
-                  {user?.isBlocked ? "✅ Unblock" : "🚫 Block"}
-                </DropdownMenuItem>
-              )}
-              {hasPermission("USER_VIEW") && (
-                <DropdownMenuItem onClick={() => navigate(user.id)}>
-                  <Eye className="text-gray-400" /> View
-                </DropdownMenuItem>
-              )}
+              )} */}
+              // {hasPermission("USER_BLOCK") && (
+              //   <DropdownMenuItem onClick={() => setBlockTarget(user)}>
+              //     {user?.isBlocked ? "✅ Unblock" : "🚫 Block"}
+              //   </DropdownMenuItem>
+              // )}
+              // {hasPermission("USER_VIEW") && (
+              //   <DropdownMenuItem onClick={() => navigate(user.id)}>
+              //     <Eye className="text-gray-400" /> View
+              //   </DropdownMenuItem>
+              // )}
             </DropdownMenuContent>
           </DropdownMenu>
         );
@@ -192,7 +192,7 @@ function User() {
             onChange={(e) => setSearch(e.target.value)}
             className="max-w-sm"
           />
-          {hasPermission("USER_CREATE") && (
+{/*           {hasPermission("USER_CREATE") && (
             <Button
               variant=""
               onClick={() => navigate("add")}
@@ -200,7 +200,7 @@ function User() {
             >
               Create User
             </Button>
-          )}
+          )} */}
         </div>
 
         <div className="rounded-md border">
