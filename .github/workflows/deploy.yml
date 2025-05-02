@@ -21,6 +21,7 @@ jobs:
             cd ~/sagar-testing
             git pull origin main
             npm install -f
+            sudo chmod -R 777 node_modules
 
             # ===== DOMAIN1.COM =====
             cp ~/envs/apple.inditech.shop.env .env
