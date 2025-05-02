@@ -98,7 +98,7 @@ const Login = () => {
                       Login to your account
                     </h1>
                     <p className="text-muted-foreground text-sm text-balance">
-                      Enter your email below to login to your account S
+                      Enter your email below to login to your account 
                     </p>
                   </div>
                   <Formik
