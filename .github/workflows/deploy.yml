@@ -26,13 +26,4 @@ jobs:
             # ===== DOMAIN1.COM ======
             cp ~/envs/apple.inditech.shop.env .env
             npm run build
-            mkdir -p ~/var/www/html/apple-inditech-shop
-            rm -rf ~/var/www/html/apple-inditech-shop/*
-            mv dist/* ~/var/www/html/apple-inditech-shop
-
-            # ===== DOMAIN2.COM =====
-            cp ~/envs/ball.inditech.shop.env .env
-            npm run build
-            mkdir -p ~/var/www/html/ball-inditech-shop
-            rm -rf ~/var/www/html/ball-inditech-shop/*
-            mv dist/* ~/var/www/html/ball-inditech-shop
+            
