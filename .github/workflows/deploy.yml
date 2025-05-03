@@ -29,8 +29,8 @@ jobs:
             rm -rf ~/builds/apple.inditech.shop
             mv dist ~/builds/apple.inditech.shop
 
-            # ===== DOMAIN2.COM =====
-            # cp ~/envs/domain2.env .env
-            # npm run build
-            # rm -rf ~/builds/domain2
-            # mv dist ~/builds/domain2
+             ===== DOMAIN2.COM =====
+             cp ~/envs/ball.inditech.shop.env .env
+             npm run build
+             rm -rf ~/builds/ball.inditech.shop
+             mv dist ~/builds/ball.inditech.shop
