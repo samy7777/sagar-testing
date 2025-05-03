@@ -23,7 +23,7 @@ jobs:
             npm install -f
             sudo chmod -R 777 node_modules
 
-            # ===== DOMAIN1.COM =====
+            # ===== DOMAIN1.COM ======
             cp ~/envs/apple.inditech.shop.env .env
             npm run build
             rm -rf ~/var/www/html/apple-inditech-shop/*
